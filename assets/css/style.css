@@ -1,0 +1,279 @@
+
+/* =========================
+   1. CSS Variables
+========================= */
+
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-card: #161b22;
+
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+
+    --accent: #58a6ff;
+    --border: #30363d;
+
+    --container-width: 1100px;
+}
+
+
+/* =========================
+   2. Reset
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================
+   3. Container
+========================= */
+
+.container {
+    width: min(90%, var(--container-width));
+    margin-inline: auto;
+}
+
+
+/* =========================
+   4. Header
+========================= */
+
+.site-header {
+    border-bottom: 1px solid var(--border);
+    padding: 22px 0;
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.site-logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.main-navigation {
+    display: flex;
+    gap: 28px;
+}
+
+.main-navigation a {
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+}
+
+.main-navigation a:hover {
+    color: var(--accent);
+}
+
+
+/* =========================
+   5. Hero Section
+========================= */
+
+.hero {
+    padding: 110px 0;
+}
+
+.hero-subtitle {
+    color: var(--accent);
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 6vw, 64px);
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+.hero-description {
+    max-width: 620px;
+    color: var(--text-secondary);
+    font-size: 18px;
+    margin-bottom: 32px;
+}
+
+
+/* =========================
+   6. Button
+========================= */
+
+.button {
+    display: inline-block;
+    background-color: var(--accent);
+    color: #0d1117;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: opacity 0.2s ease;
+}
+
+.button:hover {
+    opacity: 0.85;
+}
+
+
+/* =========================
+   7. Latest Posts
+========================= */
+
+.latest-posts {
+    padding: 60px 0 100px;
+    border-top: 1px solid var(--border);
+}
+
+.latest-posts h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.post-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.post-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.post-card h3 {
+    margin-bottom: 12px;
+}
+
+.post-card p {
+    color: var(--text-secondary);
+    margin-bottom: 18px;
+}
+
+.post-card time,
+.post-meta {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+
+/* =========================
+   8. Single Post
+========================= */
+
+.single-post {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.post-header {
+    margin-bottom: 40px;
+}
+
+.post-header h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1.3;
+    margin-bottom: 16px;
+}
+
+.post-meta {
+    display: flex;
+    gap: 20px;
+}
+
+.post-content {
+    font-size: 18px;
+}
+
+.post-content h2,
+.post-content h3 {
+    margin: 32px 0 16px;
+}
+
+.post-content p {
+    margin-bottom: 20px;
+}
+
+.post-content a {
+    color: var(--accent);
+}
+
+
+/* =========================
+   9. Footer
+========================= */
+
+.site-footer {
+    border-top: 1px solid var(--border);
+    padding: 35px 0;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.site-footer p + p {
+    margin-top: 6px;
+}
+
+
+/* =========================
+   10. Responsive Design
+========================= */
+
+@media (max-width: 768px) {
+
+    .site-header .container {
+        flex-direction: column;
+    }
+
+    .main-navigation {
+        gap: 20px;
+    }
+
+    .hero {
+        padding: 75px 0;
+    }
+
+    .post-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .post-meta {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+}

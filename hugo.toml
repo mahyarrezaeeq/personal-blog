@@ -1,0 +1,14 @@
+baseURL = "http://localhost:1313/"
+languageCode = "en-us"
+defaultContentLanguage = "en"
+title = "Mahyar's Blog"
+
+enableRobotsTXT = true
+
+[params]
+  author = "Mahyar"
+  description = "My personal blog about programming, Linux and technology."
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
